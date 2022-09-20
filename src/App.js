@@ -1,7 +1,21 @@
+import React from 'react';
+import Form from './Form';
+
 function App() {
+  const memes = useSelector(store => store.memeArray);
+
   return (
     <div className="App">
-      <p>This is the app</p>
+      <div id="form_section">
+        <Form />
+      </div>
+      <div id="meme_display">
+        {memes.map(item => (
+          <div style={{ backgroundImage: item.image }}>
+
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
