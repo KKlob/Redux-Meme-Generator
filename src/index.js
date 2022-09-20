@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 import memeReducer from './memeReducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const store = createStore(memeReducer);
+const store = configureStore({ reducer: memeReducer });
 
 root.render(
   <React.StrictMode>
