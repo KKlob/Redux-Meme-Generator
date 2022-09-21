@@ -1,0 +1,56 @@
+#memePool {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    border: 2px solid black;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#generateMeme {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hover {
+    font-size: 15rem;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    opacity: 0;
+}
+
+.imgFade {
+    opacity: 0.5;
+}
+
+.memeFrame {
+    position: relative;
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+}
+
+.textDiv {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+
+.topOfFrame {
+    top: 10px;
+}
+
+.botOfFrame {
+    bottom: 10px;
+}

@@ -1,9 +1,30 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-function Form() {
+function Form({ data }) {
 
     const dispatch = useDispatch();
+
+    const form = data.form;
+    const setForm = data.setForm;
+
+    function handleChange(evt) {
+        const { name, value } = evt.target;
+        setForm(fData => ({
+            ...fData,
+            [name]: value
+        }));
+    }
+
+    function handleSubmit(evt) {
+        evt.preventDefault();
+        dispatch({ type: "ADD_MEME", payload: form });
+        setForm({
+            image: "",
+            toptext: "",
+            bottext: ""
+        });
+    }
 
     return (
         <div>

@@ -1,23 +1,19 @@
 const INI_STATE = {
-    form: {
-        image: "",
-        toptext: "",
-        bottext: ""
-    },
     memes: []
-}
+};
 
-function addMemePure(array, item) {
-    return [...array, item];
+function removeMemePure(array, id) {
+    const newArray = array.map(item => item);
+    newArray.splice(id, 1);
+    return newArray;
 }
 
 function memeReducer(state = INI_STATE, action) {
     switch (action.type) {
-        case "UPDATE_FORM":
-            return { ...state, form: { ...state.form, [action.payload[0]]: action.payload[1] } };
         case "ADD_MEME":
-            let form = state.form;
-            return { ...state, memes: addMemePure(state.memes, form), form: { image: "", toptext: "", bottext: "" } }
+            return { ...state, memes: [...state.memes, action.payload] };
+        case "REMOVE_MEME":
+            return { ...state, memes: removeMemePure(state.memes, action.payload.id) }
         default:
             return state;
     }
